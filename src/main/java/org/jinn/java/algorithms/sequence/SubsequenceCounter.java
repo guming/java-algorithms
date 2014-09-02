@@ -1,12 +1,10 @@
 package org.jinn.java.algorithms.sequence;
 
-import org.apache.log4j.Logger;
 
-import com.jinn.netty.discard.DiscardClientHandler;
 
 public class SubsequenceCounter {
-	 private static final Logger logger = Logger.getLogger(
-			 SubsequenceCounter.class.getName());
+//	 private static final Logger logger = Logger.getLogger(
+//			 SubsequenceCounter.class.getName());
     private static char[] seq = null;
     private static char[] subseq = null;
     private static int[][] tbl = null;
@@ -48,6 +46,6 @@ public class SubsequenceCounter {
     	char[] seq1 = new char[] { 'G', 'A', 'C', 'V', 'X', 'T' };
     	char[]  seq2 = new char[] { 'A', 'G' };
     	SubsequenceCounter sc=new SubsequenceCounter();
-    	logger.info("scounter :"+sc.getCount(seq1, seq2));
+//    	logger.info("scounter :"+sc.getCount(seq1, seq2));
 	}
 }

@@ -3,8 +3,8 @@ package org.jinn.java.algorithms.Tree;
 import java.util.ArrayList;
 
 
-import com.jinn.algorithms.Tree.IntervalTree;
-import com.jinn.algorithms.Tree.IntervalTree.IntervalData;
+import org.jinn.java.algorithms.Tree.IntervalTree;
+import org.jinn.java.algorithms.Tree.IntervalTree.IntervalData;
 
 public class TestIntervalTree {
 	public static void main(String[] args) {

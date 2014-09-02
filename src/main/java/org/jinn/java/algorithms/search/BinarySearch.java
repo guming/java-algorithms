@@ -1,6 +1,6 @@
 package org.jinn.java.algorithms.search;
 
-import com.jinn.algorithms.sort.QuickSort;
+import org.jinn.java.algorithms.sort.QuickSort;
 
 /**
  * Created by guming on 14-3-21.

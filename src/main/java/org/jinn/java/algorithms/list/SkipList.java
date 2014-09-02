@@ -28,7 +28,7 @@ public class SkipList<E extends  Comparable<E>>  {
         }
     }
     static final class HeadIndex<E extends  Comparable<E>> extends Index<E> {
-        final int level;
+        final int level;    
         HeadIndex(Node<E> node, Index<E> down, Index<E> right, int level) {
             super(node, down, right);
             this.level = level;

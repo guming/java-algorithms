@@ -1,6 +1,6 @@
 package org.jinn.java.algorithms.list;
 
-import com.jinn.algorithms.list.LinkedList;
+import org.jinn.java.algorithms.list.LinkedList;
 
 /**
  * Created by guming on 14-3-17.
