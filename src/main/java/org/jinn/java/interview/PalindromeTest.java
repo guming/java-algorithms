@@ -9,8 +9,9 @@ public class PalindromeTest {
 //        Scanner scanner = new Scanner(System.in);
         //int number = scanner.nextInt();
 //
-        reverse(111);
+        reverse(1221);
         Boolean.valueOf(true);
+
     }
 
     private static boolean isPalindrome(int number) {
