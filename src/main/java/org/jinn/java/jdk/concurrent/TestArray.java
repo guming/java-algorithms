@@ -21,6 +21,7 @@ public class TestArray {
             sum+=arr[i];
             j++;
         }
+
         System.out.println(System.currentTimeMillis()-start);
         System.out.println("sum:"+sum+",j:"+j);
     }
