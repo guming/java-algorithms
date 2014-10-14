@@ -3,9 +3,9 @@ package org.jinn.java.jdk.pool;
 /**
  * Created by Yao on 2014/10/14.
  */
-public class SleepTask implements Runnable {
+public class TestTask implements Runnable {
     public static long time;
-    public SleepTask(long time) {
+    public TestTask(long time) {
         this.time=time;
     }
 
