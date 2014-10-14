@@ -1,7 +1,7 @@
 package org.jinn.java.jdk.pool;
 
 /**
- * Created by Yao on 2014/10/14.
+ * Created by gumingcn on 2014/10/14.
  */
 public class TestTask implements Runnable {
     public static long time;
