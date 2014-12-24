@@ -1,7 +1,6 @@
 package org.jinn.java.jdk.jmx;
 
 import javax.management.MBeanServer;
-import javax.management.MBeanServerFactory;
 import javax.management.ObjectName;
 import java.lang.management.ManagementFactory;
 
@@ -24,6 +23,6 @@ public class Main {
         System.out.println(serverMonitor.getUpTime());
     }
     private static void manage() throws Exception{
-        Thread.sleep(1000*120);
+        Thread.sleep(1000*1200);
     }
 }
