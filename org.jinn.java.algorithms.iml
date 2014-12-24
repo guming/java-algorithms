@@ -9,6 +9,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: jfreechart:jfreechart:0.9.19" level="project" />
   </component>
 </module>
 

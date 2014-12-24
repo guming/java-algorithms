@@ -18,7 +18,7 @@ public class TestJdkThreadExecutor {
         for(int i=minThread;i<maxThead;i++){
             executor.submit(new TestTask(10000));
         }
-        System.out.println(2 == executor.getPoolSize());
+        System.out.println(minThread == executor.getPoolSize());
         System.out.println(8 == queue.size());
         for(int i=0;i<maxThead;i++){
             executor.submit(new TestTask(10000));

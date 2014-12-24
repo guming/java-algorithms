@@ -7,6 +7,22 @@
     <groupId>java-algorithms</groupId>
     <artifactId>org.jinn.java.algorithms</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <dependencies>
+
+        <dependency>
+            <groupId>jfreechart</groupId>
+            <artifactId>jfreechart</artifactId>
+            <version>0.9.19</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jfree</groupId>
+            <artifactId>jcommon</artifactId>
+            <version>1.0.17</version>
+        </dependency>
+
+
+    </dependencies>
+
 
 
 </project>

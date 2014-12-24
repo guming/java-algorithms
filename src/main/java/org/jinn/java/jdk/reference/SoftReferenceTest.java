@@ -16,7 +16,7 @@ public class SoftReferenceTest {
 //        sdate = null;
 //        System.gc();
         ReferenceTest.drainMemory();
-//        Byte[] b=new Byte[1024*1024*30];
+        Byte[] b=new Byte[1024*1024*30];
         System.out.println(sdate.get());
         System.out.println(Runtime.getRuntime().freeMemory()/(1024*1024));
     }

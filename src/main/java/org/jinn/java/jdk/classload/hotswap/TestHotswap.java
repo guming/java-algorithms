@@ -12,16 +12,17 @@ public class TestHotswap {
     public static void main(String[] args) {
         while(true) {
             try {
-
-                InputStream in = new FileInputStream("/Users/gumingcn/dev/work/java-algorithms/target/classes/org/jinn/java/jdk/classload/hotswap/Bee.class");
-                byte[] classbyte = new byte[in.available()];
-                in.read(classbyte);
-                in.close();
-                HotswapCL hcl = new HotswapCL(HotswapCL.class.getClassLoader());
-                Class clazz = hcl.loadByte(classbyte);
-                Object bee = clazz.newInstance();
-                Method m = bee.getClass().getMethod("getValue", new Class[]{});
-                m.invoke(bee, new Object[]{});
+//                System.out.println(TestHotswap.class.getProtectionDomain().getCodeSource().getLocation().getPath());
+                System.out.println(TestHotswap.class.getResource("/").getPath());
+//                InputStream in = new FileInputStream("Bee.class");
+//                byte[] classbyte = new byte[in.available()];
+//                in.read(classbyte);
+//                in.close();
+//                HotswapCL hcl = new HotswapCL(HotswapCL.class.getClassLoader());
+//                Class clazz = hcl.loadByte(classbyte);
+//                Object bee = clazz.newInstance();
+//                Method m = bee.getClass().getMethod("getValue", new Class[]{});
+//                m.invoke(bee, new Object[]{});
 
                 Thread.sleep(1000);
             } catch (Exception e) {

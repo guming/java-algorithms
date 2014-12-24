@@ -1,6 +1,7 @@
 package org.jinn.java.algorithms.search;
 
-import org.jinn.java.algorithms.sort.QuickSort;
+//import org.jinn.java.algorithms.sort.QuickSort;
+import org.jinn.java.algorithms.sort.QuickSort2;
 
 /**
  * Created by guming on 14-3-21.
@@ -48,10 +49,10 @@ public class BinarySearch<E extends Comparable<E>> {
         return null;
     }
     public static void main(String[] args) {
-        QuickSort<Integer> qs = new QuickSort<Integer>();
+        QuickSort2<Integer> qs = new QuickSort2<Integer>(QuickSort2.PIVOT_TYPE.MIDDLE);
         BinarySearch<Integer> bs =new BinarySearch<Integer>();
         Integer[] arr = {1, 4, 7, 5, 9, 10, 12, 3, 20};
-        Integer[] sortedarr=qs.sorted(arr, QuickSort.PIVOT_TYPE.MIDDLE);
+        Integer[] sortedarr=qs.sorted(arr);
         System.out.println(bs.find(sortedarr,0,sortedarr.length-1,12));
     }
 }

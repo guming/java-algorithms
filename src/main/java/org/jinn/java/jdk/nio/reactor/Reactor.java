@@ -89,7 +89,7 @@ public class Reactor implements Runnable{
                 readbuffer.clear();
                 int count = sc.read(readbuffer);
                 if (count > 0) {
-                    String receiveText = new String( readbuffer.array(),0,count);
+                    String receiveText = new String(readbuffer.array(),0,count);
                     System.out.println("server read:"+receiveText);
                 }
                 sk.interestOps(SelectionKey.OP_WRITE);
