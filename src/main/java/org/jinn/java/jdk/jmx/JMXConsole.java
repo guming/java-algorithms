@@ -28,7 +28,7 @@ public class JMXConsole {
             JMXServiceURL serviceURL = new JMXServiceURL("service:jmx:rmi:///jndi/rmi://localhost:5050/jmxrmi");
             JMXConnector conn = JMXConnectorFactory.connect(serviceURL);
             MBeanServerConnection mbs=conn.getMBeanServerConnection();
-
+            //ThreadMXBean
              memBean= ManagementFactory.newPlatformMXBeanProxy
                     (mbs, ManagementFactory.MEMORY_MXBEAN_NAME, MemoryMXBean.class);
 
@@ -39,6 +39,7 @@ public class JMXConsole {
                     .getHeapMemoryUsage();
             nonHeap = memBean
                     .getNonHeapMemoryUsage();
+
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -53,6 +54,7 @@ public class JMXConsole {
 //        long nonHeapSizeUsed = nonHeap.getUsed();
 //        long heapCommitedSize = heap.getCommitted();
 //        long nonHeapCommitedSize = nonHeap.getCommitted();
+
         return heapSizeUsed;
     }
     public long getNonUsedHeap(){
