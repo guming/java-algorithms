@@ -91,7 +91,7 @@ public class IntervalTree<O extends Object> {
      * 
      * @param index
      *            to query for.
-     * @return data at index.
+     * @return collection at index.
      */
     public IntervalData<O> query(long index) {
         return root.query(index);
@@ -104,7 +104,7 @@ public class IntervalTree<O extends Object> {
      *            of range to query for.
      * @param end
      *            of range to query for.
-     * @return data for range.
+     * @return collection for range.
      */
     public IntervalData<O> query(long start, long end) {
         return root.query(start, end);
@@ -168,7 +168,7 @@ public class IntervalTree<O extends Object> {
          * 
          * @param index
          *            to query for.
-         * @return data at index.
+         * @return collection at index.
          */
         public IntervalData<O> query(long index) {
             IntervalData<O> results = null;
@@ -227,7 +227,7 @@ public class IntervalTree<O extends Object> {
          *            of range to query for.
          * @param end
          *            of range to query for.
-         * @return data for range.
+         * @return collection for range.
          */
         public IntervalData<O> query(long start, long end) {
             IntervalData<O> results = null;
@@ -279,10 +279,10 @@ public class IntervalTree<O extends Object> {
         private Set<O> set = new TreeSet<O>(); // Sorted
 
         /**
-         * Interval data using O as it's unique identifier
+         * Interval collection using O as it's unique identifier
          * 
          * @param object
-         *            Object which defines the interval data
+         *            Object which defines the interval collection
          */
         public IntervalData(long index, O object) {
             this.start = index;
@@ -291,10 +291,10 @@ public class IntervalTree<O extends Object> {
         }
 
         /**
-         * Interval data using O as it's unique identifier
+         * Interval collection using O as it's unique identifier
          * 
          * @param object
-         *            Object which defines the interval data
+         *            Object which defines the interval collection
          */
         public IntervalData(long start, long end, O object) {
             this.start = start;
@@ -303,10 +303,10 @@ public class IntervalTree<O extends Object> {
         }
 
         /**
-         * Interval data list which should all be unique
+         * Interval collection list which should all be unique
          * 
          * @param list
-         *            of interval data objects
+         *            of interval collection objects
          */
         public IntervalData(long start, long end, Set<O> set) {
             this.start = start;
@@ -321,7 +321,7 @@ public class IntervalTree<O extends Object> {
                 if (iter.hasNext())
                     obj2 = iter.next();
                 if (obj1.equals(obj2))
-                    throw new InvalidParameterException("Each interval data in the list must be unique.");
+                    throw new InvalidParameterException("Each interval collection in the list must be unique.");
             }
         }
 
@@ -335,7 +335,7 @@ public class IntervalTree<O extends Object> {
         }
 
         /**
-         * Combined this IntervalData with data.
+         * Combined this IntervalData with collection.
          * 
          * @param data
          *            to combined with.
@@ -351,7 +351,7 @@ public class IntervalTree<O extends Object> {
         }
 
         /**
-         * Deep copy of data.
+         * Deep copy of collection.
          * 
          * @return deep copy.
          */
@@ -362,7 +362,7 @@ public class IntervalTree<O extends Object> {
         }
 
         /**
-         * Query inside this data object.
+         * Query inside this collection object.
          * 
          * @param start
          *            of range to query for.
@@ -380,7 +380,7 @@ public class IntervalTree<O extends Object> {
         }
 
         /**
-         * Query inside this data object.
+         * Query inside this collection object.
          * 
          * @param start
          *            of range to query for.

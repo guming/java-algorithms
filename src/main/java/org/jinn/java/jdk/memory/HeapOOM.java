@@ -16,6 +16,6 @@ public class HeapOOM {
     }
 
     static class TestObject{
-
+        byte[] b=new byte[1024*1024];
     }
 }
