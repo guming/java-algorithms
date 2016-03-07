@@ -14,7 +14,7 @@ public class PreThreadFormater {
             @Override
             protected  SimpleDateFormat initialValue(){
                 System.out.println("Creating SimpleDateFormat for Thread : " + Thread.currentThread().getName());
-                return new SimpleDateFormat("dd/MM/yyyy");
+                return new SimpleDateFormat("dd/MM/yyyy hh/mm/ss");
 
             }
         };

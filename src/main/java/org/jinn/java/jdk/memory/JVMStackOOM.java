@@ -20,7 +20,7 @@ public class JVMStackOOM {
     public void stackleakByThread(){
         while(true){
             Thread thread=new Thread(new Runnable() {
-                @Override
+//                @Override
                 public void run() {
                     dontstop();
                 }

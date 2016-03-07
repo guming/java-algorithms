@@ -10,7 +10,7 @@ public class WeakReferenceTest {
     public static void main(String[] args) {
         WeakReference wdate = new WeakReference(new MyDate());
         ReferenceTest.drainMemory();
-//        System.gc();
+        System.gc();
         System.out.println(wdate.get());
     }
 }
