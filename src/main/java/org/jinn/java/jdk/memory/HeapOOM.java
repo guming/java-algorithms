@@ -9,10 +9,21 @@ import java.util.List;
 public class HeapOOM {
 
     public static void main(String[] args) {
-        List<TestObject> testObjectList = new ArrayList<TestObject>();
-        while(true) {
-            testObjectList.add(new TestObject());
+        try {
+            Thread.sleep(1000*3);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
+        List<TestObject> testObjectList = new ArrayList<TestObject>();
+        long start=Runtime.getRuntime().freeMemory();
+        int i=4;
+        while(i>0) {
+            testObjectList.add(new TestObject());
+            System.out.println("put it.");
+            i--;
+        }
+        long end=Runtime.getRuntime().freeMemory();
+        System.out.println((start-end)/1024);
     }
 
     static class TestObject{

@@ -1,9 +1,11 @@
 package org.jinn.java.jdk.serialize;
 
+import java.io.Serializable;
+
 /**
  * Created by gumingcn on 2014/10/24.
  */
-public class User {
+public class User implements Serializable{
 
     public Integer id;
 

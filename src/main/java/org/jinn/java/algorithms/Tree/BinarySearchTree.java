@@ -54,6 +54,7 @@ public class BinarySearchTree<E extends Comparable<E>> {
                     node.leftNode = newNode;
                     size++;
                     newNode.parentNode=node;
+                    System.out.println("left node:"+elem.toString()+" parent:"+newNode.parentNode.elem.toString());
                     return newNode;
                 }else {
                     node = node.leftNode;
@@ -63,6 +64,7 @@ public class BinarySearchTree<E extends Comparable<E>> {
                     node.rightNode = newNode;
                     size++;
                     newNode.parentNode=node;
+                    System.out.println("right node:"+elem.toString()+" parent:"+newNode.parentNode.elem.toString());
                     return newNode;
                 }else{
                     node=node.rightNode;
@@ -239,12 +241,14 @@ public class BinarySearchTree<E extends Comparable<E>> {
 //        binaryTree.addNode(45);
 //        binaryTree.addNode(15);
 //        binaryTree.addNode(105);
-        binaryTree.remove(u45);
-        binaryTree.addNode(new User("i", 200));
-//        User[] a=binaryTree.getBFS();
-//        for (User integer : a) {
-//            System.out.println(integer.toString());
-//        }
+//        binaryTree.remove(u45);
+        System.out.println(binaryTree.root.elem+" root");
+//        binaryTree.addNode(new User("i", 200));
+        Object[] a=binaryTree.getBFS();
+        System.out.println(binaryTree.root.elem+" root");
+        for (Object u : a) {
+            System.out.println(u.toString());
+        }
 
     }
 
