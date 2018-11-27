@@ -14,8 +14,8 @@ public class TransactionMain {
     private static AtomicInteger autoIdGenerater = new AtomicInteger(0);
 
     public static void main(String[] args) throws Exception {
-//        Thread.sleep(3000);
-//        for(int j=0;j<100;j++){
+        Thread.sleep(3000);
+        for(int j=0;j<100;j++){
             CountDownLatch countDownLatch = new CountDownLatch(count);
             ElementHandler elementHandler = new ElementHandler();
             Element element = new Element(autoIdGenerater.addAndGet(1), "test1");
@@ -25,17 +25,9 @@ public class TransactionMain {
                 Task task1 = new Task("r" + i, countDownLatch, elementHandler);
                 executor.submit(task1);
             }
-    //        Task task2 = new Task("r2", countDownLatch, elementHandler);
-    //        executor.submit(task2);
-//            countDownLatch.await();
-
-            executor.awaitTermination(5, TimeUnit.SECONDS);
+            executor.awaitTermination(3, TimeUnit.SECONDS);
             System.out.println(elementHandler.get(1));
-            while (Scheduler.getRequestQueue().size() != 0) {
-                System.out.println(Scheduler.getRequestQueue().poll());
-            }
-            elementHandler = null;
-//        }
+        }
         executor.shutdownNow();
     }
 }

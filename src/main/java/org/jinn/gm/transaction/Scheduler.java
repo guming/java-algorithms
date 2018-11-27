@@ -20,7 +20,7 @@ public class Scheduler {
 
     private static Scheduler scheduler = new Scheduler();
 
-    private static LinkedQueue requestQueue = new LinkedQueue();
+    private static ConcurrentLinkedQueue requestQueue = new ConcurrentLinkedQueue();
 
     private Scheduler() {
     }
@@ -29,9 +29,9 @@ public class Scheduler {
         return scheduler;
     }
 
-    public Long getNextSeq(){
-        return txSeq.addAndGet(1);
-    }
+//    public Long getNextSeq(){
+//        return txSeq.addAndGet(1);
+//    }
 
     public Integer generateTxId(){
         return txIdGenerater.addAndGet(1);
@@ -50,26 +50,12 @@ public class Scheduler {
                     return false;
                 }
                 if(acquirelock(eid, lock)){
-                    System.out.println("acquired lock true:"+lock+"," +
-                            "tid:"+Thread.currentThread().getId()+",time:"+System.currentTimeMillis());
-                    requestQueue.offer(lock.getTxId());
+//                    requestQueue.offer(lock.getTxId());
                     return true;
                 }
             }
-//            LinkedQueue newLockList = new LinkedQueue();
-//            newLockList.offer(lock);
-//            System.out.println("put que:"+lock);
-//            LinkedQueue oldLockList = lockWaitTable.putIfAbsent(eid, newLockList);
-//            if (oldLockList != null) {
-//                System.out.println("put que:"+lock);
-//                oldLockList.offer(lock);
-//            }
-//            return false;
         } else {
-            System.out.println("acquired lock true:"+lock+"," +
-                    "tid:"+Thread.currentThread().getId()+",time:"+System.currentTimeMillis());
-
-            requestQueue.offer(lock.getTxId());
+//            requestQueue.offer(lock.getTxId());
         }
         long end = System.currentTimeMillis();
         System.out.println("lock take time:"+(end-start)+","+lock.getTxId());
@@ -77,8 +63,10 @@ public class Scheduler {
     }
 
     private boolean acquirelock(Integer eid,Lock lock){
+        long start = System.currentTimeMillis();
         Lock return_lock=lockTable.putIfAbsent(eid, lock);
         if(return_lock==null||return_lock.getTxId()==lock.getTxId()){
+            System.out.println("acquire succ time:"+(System.currentTimeMillis()-start));
             return true;
         } else {
             return false;
@@ -86,20 +74,11 @@ public class Scheduler {
     }
 
     public boolean release(Integer eid,Lock lock,long startTime){
-        boolean flag = false;
-//        synchronized (lockTable) {
-            flag = lockTable.remove(eid, lock);
-            if (flag) {
-//                notifyExchangeLock(eid, startTime);
-                System.out.println("release:" + flag + ",lock:" + lock);
-            } else {
-                System.out.println("release:" + flag + ",lock:" + lock);
-            }
-//        }
+        boolean flag = lockTable.remove(eid, lock);
         return flag;
     }
 
-    public static LinkedQueue getRequestQueue() {
+    public static ConcurrentLinkedQueue getRequestQueue() {
         return requestQueue;
     }
 }
